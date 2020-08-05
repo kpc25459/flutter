@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_app/randomWords.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Hello World'),
+      //home: MyHomePage(title: 'Flutter Hello World'),
+      home: RandomWords()
       /* home: Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
