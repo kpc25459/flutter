@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Colors.white
       ),
       //home: MyHomePage(title: 'Flutter Hello World'),
       home: RandomWords()
