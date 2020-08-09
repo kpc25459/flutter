@@ -1,49 +1,77 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_login/constants.dart';
 
-class LoginPage extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  MyCustomFormState createState() {
+    return MyCustomFormState();
+  }
 }
 
-class _LoginPageState extends State<LoginPage> {
-//  final _formKey = GlobalKey<FormState>();
-//  String _password;
-//  String _email;
+class MyCustomFormState extends State<MyCustomForm> {
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Panel logowania do aplikacji: JEŻYK"),
-      ),
-      body: Container(
-        padding: EdgeInsets.all(20.0),
-//          child: Form(
-//            key: _formKey,
-        child: Column(children: <Widget>[
+    // Build a Form widget using the _formKey created above.
+    return Form(
+      key: _formKey,
+      child: Column(
+        //crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
           SizedBox(
             height: 20.0,
           ),
-          Text(
-            'Podaj dane do logowania:',
-            style: TextStyle(fontSize: 15, color: Colors.blueGrey, fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "Wprowadź dane do logowania",
+              style: TextStyle(fontFamily: 'Roboto', color: Colors.blueGrey, fontSize: 20),
+            ),
           ),
-          SizedBox(
-            height: 10.0,
-          ),
-          TextFormField(
-//                      onSaved: (value) => _email = value,
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextFormField(
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(labelText: 'Adres email')),
-          TextFormField(
-//                      onSaved: (value) => _password = value,
-              obscureText: true,
-              decoration: InputDecoration(labelText: 'Hasło')),
-          SizedBox(
-            height: 30.0,
+              decoration: InputDecoration(labelText: 'Adres email', hintStyle: HintTextStyle),
+              validator: (value) {
+                if (value.isEmpty) {
+                  return 'Wprowadź adres email';
+                }
+                return null;
+              },
+            ),
           ),
-          RaisedButton(child: Text('Zaloguj'), onPressed: () {}),
-        ]),
+          Padding(
+            padding: const EdgeInsets.all((20.0)),
+            child: TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(labelText: 'Hasło'),
+              validator: (value) {
+                if (value.isEmpty) {
+                  return 'Wprowadź hasło';
+                }
+                return null;
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: RaisedButton(
+              onPressed: () {
+                // Validate returns true if the form is valid, or false
+                // otherwise.
+                if (_formKey.currentState.validate()) {
+                  // If the form is valid, display a Snackbar.
+                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Trwa logowanie...')));
+                }
+              },
+              child: Text(
+                'Zaloguj',
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
