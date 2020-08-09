@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: appTitle,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.white30,
         body: MyCustomForm(),
       ),
     );
