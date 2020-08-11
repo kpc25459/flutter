@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_login/login_page.dart';
+import 'package:flutter_app_login/sign_up.dart';
+import 'package:flutter_app_login/sing_in.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: appTitle,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white30,
-        body: MyCustomForm(),
+        backgroundColor: Color(0xFFF4D58D),
+        body: LoginScreen(),
       ),
     );
   }
