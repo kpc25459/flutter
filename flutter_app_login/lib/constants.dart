@@ -7,7 +7,7 @@ final HintTextStyle = TextStyle(
 
 final LoginTextStyle = TextStyle(
   fontFamily: 'Roboto',
-  color: Color(0xff001427),
+  color: Color(0xff393D3F),
   fontSize: 20,
   fontWeight: FontWeight.bold,
 );
@@ -21,7 +21,7 @@ final LoginTextButton = TextStyle(
 );
 
 final BoxDecorationStyle = BoxDecoration(
-  color: Color(0xFF708D81),
+  color: Color(0xFFC6C5B9),
   borderRadius: BorderRadius.circular(10.0),
   boxShadow: [
     BoxShadow(

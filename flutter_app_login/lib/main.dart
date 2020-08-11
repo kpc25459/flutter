@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: appTitle,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFF4D58D),
+        backgroundColor: Color(0xFFFDFDFF),
         body: LoginScreen(),
       ),
     );
