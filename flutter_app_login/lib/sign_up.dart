@@ -24,16 +24,9 @@ class _SignupScreenState extends State<SignupScreen> {
     final email = EmailWidget(hintText: 'Dupa',);
 
     final password = TextFormField(
-//      initialValue: '123',
         obscureText: true,
         autofocus: false,
         style: TextStyle(color: Color(0xFF0B2775)),
-//        validator: (value) {
-//          if (value.isEmpty) {
-//            return 'Enter your password';
-//          }
-//          return null;
-//        },
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
@@ -48,16 +41,9 @@ class _SignupScreenState extends State<SignupScreen> {
         ));
 
     final confirmPassword = TextFormField(
-//      initialValue: '123',
         obscureText: true,
         autofocus: false,
         style: TextStyle(color: Color(0xFF0B2775)),
-//        validator: (value) {
-//          if (value.isEmpty) {
-//            return 'Enter your password';
-//          }
-//          return null;
-//        },
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
@@ -79,12 +65,6 @@ class _SignupScreenState extends State<SignupScreen> {
           onPressed: () {
             Route route = MaterialPageRoute(builder: (context) => LoginScreen());
             Navigator.push(context, route);
-            // Validate returns true if the form is valid, or false
-//          // otherwise.
-////          if (_formKey.currentState.validate()) {
-////            // If the form is valid, display a Snackbar.
-////            Scaffold.of(context).showSnackBar(SnackBar(content: Text('Loging in...')));
-////          }
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
@@ -108,8 +88,6 @@ class _SignupScreenState extends State<SignupScreen> {
     );
 
     final body = Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
         children: <Widget>[
@@ -127,7 +105,11 @@ class _SignupScreenState extends State<SignupScreen> {
           ),
           confirmPassword,
           SizedBox(
-            height: 180.0,
+            height: 30.0,
+          ),
+          loginButton,
+          SizedBox(
+            height: 120.0,
           ),
           signupLabel,
         ],

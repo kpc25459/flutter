@@ -29,16 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
     final email = EmailWidget(hintText: 'Cycki',);
 
     final password = TextFormField(
-//      initialValue: '123',
         obscureText: true,
         autofocus: false,
         style: TextStyle(color: Color(0xFF0B2775)),
-//        validator: (value) {
-//          if (value.isEmpty) {
-//            return 'Enter your password';
-//          }
-//          return null;
-//        },
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
@@ -60,12 +53,6 @@ class _LoginScreenState extends State<LoginScreen> {
           onPressed: () {
             Route route = MaterialPageRoute(builder: (context) => HomePage());
             Navigator.push(context, route);
-            // Validate returns true if the form is valid, or false
-//          // otherwise.
-////          if (_formKey.currentState.validate()) {
-////            // If the form is valid, display a Snackbar.
-////            Scaffold.of(context).showSnackBar(SnackBar(content: Text('Loging in...')));
-////          }
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
