@@ -6,7 +6,6 @@ import 'package:flutter_app_login/sign_up.dart';
 import 'package:flutter_app_login/widgets/email_widget.dart';
 
 class LoginScreen extends StatefulWidget {
-//  static String tag = 'login-screen';
   @override
   _LoginScreenState createState() {
     return _LoginScreenState();
@@ -14,7 +13,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-//  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -124,13 +122,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-//    return Container(
-//      padding: EdgeInsets.all(40.0),
-//      margin: EdgeInsets.only(top: 20.0),
-//      child: Form(
-//          key: _formKey,
-//          child: Column(
-//            children: <Widget>[_buildWelcomeText(), _buildEmailField(), _buildPasswordField(), _buildRaisedButton()],
-//          )),
-//    );

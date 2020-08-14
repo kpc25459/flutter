@@ -7,11 +7,6 @@ import 'package:flutter_app_login/sign_in.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-//  final routes = <String, WidgetBuilder>{
-//    LoginScreen.tag: (content) => LoginScreen(),
-//    SignupScreen.tag: (content) => SignupScreen(),
-//    HomePage.tag: (content) => HomePage(),
-//  };
 
   @override
   Widget build(BuildContext context) {
