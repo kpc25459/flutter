@@ -3,6 +3,7 @@ import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/home_page.dart';
 import 'package:flutter_app_login/password_reminder.dart';
 import 'package:flutter_app_login/sign_up.dart';
+import 'package:flutter_app_login/widgets.dart';
 
 class LoginScreen extends StatefulWidget {
 //  static String tag = 'login-screen';
@@ -25,32 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-    final email = TextFormField(
-      keyboardType: TextInputType.emailAddress,
-//      initialValue: 'adresemail@gmail.com',
-      style: TextStyle(
-        color: Color(0xFF0B2775),
-      ),
-      autofocus: false,
-//      validator: (value) {
-//        if (value.isEmpty) {
-//          return 'Enter your email';
-//        }
-//        return null;
-//        },
-      decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        hintText: 'Email',
-        hintStyle: HintTextStyle,
-        prefixIcon: Icon(
-          Icons.email,
-          color: Color(0xFF0B2775),
-        ),
-      ),
-    );
+    final email = TextFormWidget(hintText: 'Cycki',);
 
     final password = TextFormField(
 //      initialValue: '123',

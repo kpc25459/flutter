@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/sign_in.dart';
+import 'package:flutter_app_login/widgets.dart';
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -20,32 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
 
-    final email = TextFormField(
-      keyboardType: TextInputType.emailAddress,
-//      initialValue: 'adresemail@gmail.com',
-      style: TextStyle(
-        color: Color(0xFF0B2775),
-      ),
-      autofocus: false,
-//      validator: (value) {
-//        if (value.isEmpty) {
-//          return 'Enter your email';
-//        }
-//        return null;
-//        },
-      decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        hintText: 'Email',
-        hintStyle: HintTextStyle,
-        prefixIcon: Icon(
-          Icons.email,
-          color: Color(0xFF0B2775),
-        ),
-      ),
-    );
+    final email = TextFormWidget(hintText: 'Dupa',);
 
     final password = TextFormField(
 //      initialValue: '123',
