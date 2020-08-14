@@ -3,7 +3,9 @@ import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/home_page.dart';
 import 'package:flutter_app_login/password_reminder.dart';
 import 'package:flutter_app_login/sign_up.dart';
-import 'package:flutter_app_login/widgets/email_widget.dart';
+import 'package:flutter_app_login/widgets/caption_text.dart';
+import 'package:flutter_app_login/widgets/email_field.dart';
+import 'package:flutter_app_login/widgets/password_field.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -16,32 +18,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final welcomeText = Padding(
-      padding: EdgeInsets.only(top: 120),
-      child: Text(
-        'Sign In',
-        style: LoginTextStyle,
-      ),
-    );
+    final welcomeText = CaptionText(caption: Text(
+      'Sign In',
+      style: LoginTextStyle,
+    ));
 
-    final email = EmailWidget(hintText: 'Cycki',);
+    final email = EmailField(hintText: 'Cycki',);
 
-    final password = TextFormField(
-        obscureText: true,
-        autofocus: false,
-        style: TextStyle(color: Color(0xFF0B2775)),
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          hintText: 'Password',
-          hintStyle: HintTextStyle,
-          prefixIcon: Icon(
-            Icons.lock,
-            color: Color(0xFF0B2775),
-          ),
-        ));
+    final password = PasswordField(hintText: 'Dupa', icon: Icon(
+      Icons.lock,
+      color: Color(0xFF0B2775),
+    ));
 
     final loginButton = Container(
       height: 45.0,

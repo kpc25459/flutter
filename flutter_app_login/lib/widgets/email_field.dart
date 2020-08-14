@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class EmailWidget extends StatelessWidget {
+class EmailField extends StatelessWidget {
   final hintText;
 
-  const EmailWidget({
+  const EmailField({
     Key key,
     this.hintText,
   }) : super(key: key);

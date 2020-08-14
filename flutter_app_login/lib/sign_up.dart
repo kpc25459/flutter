@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/sign_in.dart';
-import 'package:flutter_app_login/widgets/email_widget.dart';
+import 'package:flutter_app_login/widgets/email_field.dart';
+import 'package:flutter_app_login/widgets/password_field.dart';
+import 'package:flutter_app_login/widgets/caption_text.dart';
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -13,49 +15,24 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
-    final signUpText = Padding(
-      padding: EdgeInsets.only(top: 120),
-      child: Text(
+
+    final welcomeText = CaptionText(caption: Text(
         'Sign Up',
         style: LoginTextStyle,
       ),
     );
 
-    final email = EmailWidget(hintText: 'Dupa',);
+    final email = EmailField(hintText: 'Dupa',);
 
-    final password = TextFormField(
-        obscureText: true,
-        autofocus: false,
-        style: TextStyle(color: Color(0xFF0B2775)),
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          hintText: 'Password',
-          hintStyle: HintTextStyle,
-          prefixIcon: Icon(
-            Icons.lock,
-            color: Color(0xFF0B2775),
-          ),
-        ));
+    final password = PasswordField(hintText: 'Dupa', icon: Icon(
+      Icons.lock,
+      color: Color(0xFF0B2775),
+    ));
 
-    final confirmPassword = TextFormField(
-        obscureText: true,
-        autofocus: false,
-        style: TextStyle(color: Color(0xFF0B2775)),
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF0B2775), width: 1.0),
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          hintText: 'Password',
-          hintStyle: HintTextStyle,
-          prefixIcon: Icon(
-            Icons.lock,
-            color: Color(0xFF0B2775),
-          ),
-        ));
+    final confirmPassword = PasswordField(hintText: 'Dupa', icon: Icon(
+      Icons.lock,
+      color: Color(0xFF0B2775),
+    ));
 
     final loginButton = Container(
       height: 45.0,
@@ -91,7 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
       padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
         children: <Widget>[
-          signUpText,
+          welcomeText,
           SizedBox(
             height: 50,
           ),

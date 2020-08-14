@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/sign_in.dart';
-import 'package:flutter_app_login/widgets/email_widget.dart';
+import 'package:flutter_app_login/widgets/email_field.dart';
+import 'package:flutter_app_login/widgets/caption_text.dart';
 
 class PasswordReminder extends StatefulWidget {
   @override
@@ -13,7 +14,14 @@ class PasswordReminder extends StatefulWidget {
 class _PasswordReminderState extends State<PasswordReminder> {
   @override
   Widget build(BuildContext context) {
-    final email = EmailWidget(hintText: 'kot');
+
+    final welcomeText = CaptionText(caption: Text(
+      'Password reminder',
+      style: LoginTextStyle,
+    ),
+    );
+
+    final email = EmailField(hintText: 'kot');
 
     final reminderButton = Container(
         height: 45.0,
@@ -37,14 +45,18 @@ class _PasswordReminderState extends State<PasswordReminder> {
       padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
         children: <Widget>[
+          welcomeText,
           SizedBox(
-            height: 120.0,
+            height: 50.0,
           ),
           email,
           SizedBox(
-            height: 50,
+            height: 30,
           ),
-          reminderButton
+          reminderButton,
+          SizedBox(
+            height: 10,
+          )
         ],
       ),
     );
