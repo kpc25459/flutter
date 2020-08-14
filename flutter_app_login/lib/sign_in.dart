@@ -3,7 +3,7 @@ import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/home_page.dart';
 import 'package:flutter_app_login/password_reminder.dart';
 import 'package:flutter_app_login/sign_up.dart';
-import 'package:flutter_app_login/widgets.dart';
+import 'package:flutter_app_login/widgets/email_widget.dart';
 
 class LoginScreen extends StatefulWidget {
 //  static String tag = 'login-screen';
@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-    final email = TextFormWidget(hintText: 'Cycki',);
+    final email = EmailWidget(hintText: 'Cycki',);
 
     final password = TextFormField(
 //      initialValue: '123',

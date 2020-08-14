@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/sign_in.dart';
-import 'package:flutter_app_login/widgets.dart';
+import 'package:flutter_app_login/widgets/email_widget.dart';
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
     );
 
-    final email = TextFormWidget(hintText: 'Dupa',);
+    final email = EmailWidget(hintText: 'Dupa',);
 
     final password = TextFormField(
 //      initialValue: '123',
