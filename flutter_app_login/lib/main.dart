@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: appTitle,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFFDFDFF),
+        backgroundColor: Color(0xFF0B2775),
         body: LoginScreen(),
       ),
     );

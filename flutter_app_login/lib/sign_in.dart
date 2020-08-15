@@ -23,11 +23,11 @@ class _LoginScreenState extends State<LoginScreen> {
       style: LoginTextStyle,
     ));
 
-    final email = EmailField(hintText: 'Cycki',);
+    final email = EmailField(hintText: 'Email',);
 
-    final password = PasswordField(hintText: 'Dupa', icon: Icon(
+    final password = PasswordField(hintText: 'Password', icon: Icon(
       Icons.lock,
-      color: Color(0xFF0B2775),
+      color: Colors.white,
     ));
 
     final loginButton = Container(
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           forgotLabel,
           SizedBox(
-            height: 120.0,
+            height: 160.0,
           ),
           signupLabel
         ],
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Color(0xFF82A0F4),
+      backgroundColor: Color(0xFF0B2775),
       body: SingleChildScrollView(
         child: body,
       )

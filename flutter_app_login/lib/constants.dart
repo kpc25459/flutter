@@ -7,7 +7,7 @@ final HintTextStyle = TextStyle(
 
 final LoginTextStyle = TextStyle(
   fontFamily: 'Roboto',
-  color: Color(0xFF0B2775),
+  color: Colors.white,
   fontSize: 25,
   fontWeight: FontWeight.bold,
 );

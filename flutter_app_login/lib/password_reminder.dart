@@ -14,14 +14,14 @@ class PasswordReminder extends StatefulWidget {
 class _PasswordReminderState extends State<PasswordReminder> {
   @override
   Widget build(BuildContext context) {
-
-    final welcomeText = CaptionText(caption: Text(
-      'Password reminder',
-      style: LoginTextStyle,
-    ),
+    final welcomeText = CaptionText(
+      caption: Text(
+        'Password reminder',
+        style: LoginTextStyle,
+      ),
     );
 
-    final email = EmailField(hintText: 'kot');
+    final email = EmailField(hintText: 'Email');
 
     final reminderButton = Container(
         height: 45.0,
@@ -42,6 +42,7 @@ class _PasswordReminderState extends State<PasswordReminder> {
             )));
 
     final body = Container(
+      width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
         children: <Widget>[
@@ -54,18 +55,20 @@ class _PasswordReminderState extends State<PasswordReminder> {
             height: 30,
           ),
           reminderButton,
-          SizedBox(
-            height: 10,
-          )
+//          SizedBox(
+//            height: 10,
+//          )
         ],
       ),
     );
 
     return Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: Color(0xFF82A0F4),
-        body: SingleChildScrollView(
-          child: body,
-        ));
+//        resizeToAvoidBottomInset: true,
+      backgroundColor: Color(0xFF0B2775),
+      body: body,
+//        body: SingleChildScrollView(
+//          child: body,
+//        ));
+    );
   }
 }
