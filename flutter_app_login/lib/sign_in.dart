@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_app_login/constants.dart';
 import 'package:flutter_app_login/home_page.dart';
+import 'package:flutter_app_login/models/user.dart';
 import 'package:flutter_app_login/password_reminder.dart';
 import 'package:flutter_app_login/sign_up.dart';
 import 'package:flutter_app_login/widgets/caption_text.dart';
@@ -15,29 +17,45 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final welcomeText = CaptionText(caption: Text(
+    final welcomeText = CaptionText(
+        caption: Text(
       'Sign In',
       style: LoginTextStyle,
     ));
 
-    final email = EmailField(hintText: 'Email',);
+    final email = EmailField(hintText: 'Email', textEditingController: emailController);
 
-    final password = PasswordField(hintText: 'Password', icon: Icon(
-      Icons.lock,
-      color: Colors.white,
-    ));
+    final password = PasswordField(
+        hintText: 'Password',
+        icon: Icon(
+          Icons.lock,
+          color: Colors.white,
+        ));
 
     final loginButton = Container(
       height: 45.0,
       width: double.infinity,
       child: RaisedButton(
-        elevation: 5.0,
+          elevation: 5.0,
           onPressed: () {
-            Route route = MaterialPageRoute(builder: (context) => HomePage());
-            Navigator.push(context, route);
+            var enteredEmail = emailController.text;
+
+            if (enteredEmail.isNotEmpty) {
+
+              var provider = Provider.of<UserModel>(context);
+
+              provider.setName(enteredEmail);
+
+              Route route = MaterialPageRoute(builder: (context) => HomePage());
+              Navigator.push(context, route);
+
+            }
+
+
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
@@ -101,11 +119,16 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      backgroundColor: Color(0xFF0B2775),
-      body: SingleChildScrollView(
-        child: body,
-      )
-    );
+        resizeToAvoidBottomInset: true,
+        backgroundColor: Color(0xFF0B2775),
+        body: SingleChildScrollView(
+          child: body,
+        ));
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
   }
 }

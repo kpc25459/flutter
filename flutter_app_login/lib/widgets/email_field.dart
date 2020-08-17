@@ -4,10 +4,12 @@ import '../constants.dart';
 
 class EmailField extends StatelessWidget {
   final hintText;
+  final textEditingController;
 
   const EmailField({
     Key key,
     this.hintText,
+    this.textEditingController
   }) : super(key: key);
 
   @override
@@ -27,6 +29,7 @@ class EmailField extends StatelessWidget {
       ),
       height: 60.0,
       child: TextFormField(
+        controller: textEditingController,
         keyboardType: TextInputType.emailAddress,
         style: TextStyle(
           color: Color(0xFF0B2775),

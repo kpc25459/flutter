@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_login/home_page.dart';
-import 'package:flutter_app_login/password_reminder.dart';
-import 'package:flutter_app_login/sign_up.dart';
+import 'package:flutter_app_login/models/user.dart';
 import 'package:flutter_app_login/sign_in.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(ChangeNotifierProvider(
+      create: (context) => UserModel(),
+      child: MyApp(),
+    ));
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final appTitle = 'Divorce Manager';
