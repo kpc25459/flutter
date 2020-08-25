@@ -18,6 +18,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +43,18 @@ class _LoginScreenState extends State<LoginScreen> {
       child: RaisedButton(
           elevation: 5.0,
           onPressed: () {
-            var enteredEmail = emailController.text;
+            if (_formKey.currentState.validate()) {
+              var enteredEmail = emailController.text;
 
-            if (enteredEmail.isNotEmpty) {
+              if (enteredEmail.isNotEmpty) {
+                var provider = Provider.of<UserModel>(context);
 
-              var provider = Provider.of<UserModel>(context);
+                provider.setName(enteredEmail);
 
-              provider.setName(enteredEmail);
-
-              Route route = MaterialPageRoute(builder: (context) => HomePage());
-              Navigator.push(context, route);
-
+                Route route = MaterialPageRoute(builder: (context) => HomePage());
+                Navigator.push(context, route);
+              }
             }
-
-
           },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
@@ -89,32 +88,36 @@ class _LoginScreenState extends State<LoginScreen> {
       },
     );
 
-    final body = Container(
-      padding: EdgeInsets.only(left: 20.0, right: 20.0),
-      child: Column(
-        children: <Widget>[
-          welcomeText,
-          SizedBox(
-            height: 50,
-          ),
-          email,
-          SizedBox(
-            height: 30.0,
-          ),
-          password,
-          SizedBox(
-            height: 30.0,
-          ),
-          loginButton,
-          SizedBox(
-            height: 30.0,
-          ),
-          forgotLabel,
-          SizedBox(
-            height: 160.0,
-          ),
-          signupLabel
-        ],
+    final body = Form(
+      key: _formKey,
+      autovalidate: true,
+      child: Container(
+        padding: EdgeInsets.only(left: 20.0, right: 20.0),
+        child: Column(
+          children: <Widget>[
+            welcomeText,
+            SizedBox(
+              height: 50,
+            ),
+            email,
+            SizedBox(
+              height: 30.0,
+            ),
+            password,
+            SizedBox(
+              height: 30.0,
+            ),
+            loginButton,
+            SizedBox(
+              height: 30.0,
+            ),
+            forgotLabel,
+            SizedBox(
+              height: 120.0,
+            ),
+            signupLabel
+          ],
+        ),
       ),
     );
 
